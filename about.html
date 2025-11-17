@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students For Health</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/resources_about_events.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <div class="section-container" style="background-color: hsl(223, 89%, 97%); padding-bottom: 0px;">
+            <div class="left-section">
+                <h1>About Us</h1>
+                <p>Students for Health is founded by a group of students at Veritas Academy in New York.
+                    We are dedicated to making health information easier to find and discuss.
+                    We connect our community with trustworthy resources and aims to foster a culture
+                    of support, care, and awareness through peer-led outreach.
+                </p>
+                <p>
+                    Each month, we design concise, easy-to-understand flyers on topics such as reproductive health,
+                    mental wellness, and affordable care—distributed across schools, libraries,
+                    and community centers. We also host monthly online discussions where anyone can ask questions,
+                    share experiences, or simply listen in.
+                </p>
+            </div>
+
+            <div class="right-section image-stack">
+                <div class="image-container">
+                    <img src="website_images/health_tip_flyers_on_table.jpg"
+                        class="image image-bottom">
+                    <img src="website_images/health_tip_flyer_on_bulletin_board.jpg"
+                        class="image image-top">
+                </div>
+            </div>
+        </div>
+
+        <div class="single-column-container" style="background-color: hsl(223, 89%, 97%);">
+            <p>
+                Since our founding, we've seen what we do make a real difference in people's lives.
+            </p>
+
+            <p class="testimonial">
+                I probably would’ve never heard about GoodRx if it wasn’t for Students for Health.
+                I was able to help my grandma save a lot of money on one of her prescriptions after trying it out.
+            </p>
+
+            <p class="testimonial">
+                I’d always thought about starting birth control for different reasons, but I was too intimidated to
+                start the process. Students for Health helped me take the first step by encouraging
+                me to call and book an appointment with a doctor.
+            </p>
+        </div>
+
+        <div class="single-column-container">
+            <h1>Contact Us!</h1>
+            <p>You can reach us using this email: studentsforhealth.ny@gmail.com.</p>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        async function loadSharedComponents() {
+            const [navbarRes, footerRes] = await Promise.all([
+                fetch('components/navbar.html'),
+                fetch('components/footer.html')
+            ]);
+            document.getElementById('navbar-placeholder').innerHTML = await navbarRes.text();
+            document.getElementById('footer-placeholder').innerHTML = await footerRes.text();
+        }
+        loadSharedComponents();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students For Health</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <div class="hero-section-container">
+            <img src="website_images/hero_stock_image.jpg" class="hero-image">
+            <div class="hero-text">
+                <h1>Knowledge Is Care.</h1>
+                <p>
+                    Students for Health is a student-run organization that aims to make health information easier to
+                    find
+                    and discuss. We connect our community with reliable health information and local resources, while
+                    fostering a culture of <b>support</b>, <b>care</b>, and <b>awareness</b> through student-driven
+                    outreach.
+                </p>
+            </div>
+        </div>
+
+        <div class="section-container" style="background-color: hsl(223, 89%, 95%);">
+            <div class="left-section">
+                <h2>
+                    Monthly Health Tips
+                </h2>
+                <p>
+                    Each month, we create concise, easy-to-understand flyers on health topics such as reproductive
+                    health,
+                    mental wellness, and saving money on prescriptions. These flyers are distributed across campuses,
+                    libraries, community centers like the YMCA, food pantries, and other places where community members
+                    gather.
+                </p>
+                <p>
+                    Past topics include “Planned Parenthood: What Do They Actually Do?” and “Save Money with GoodRx.”
+                </p>
+                <button>Read More</button>
+            </div>
+
+            <div class="right-section image-stack">
+                <div class="image-container">
+                    <img src="website_images/health_tips/apr_25_emergency_contraception_what_is_it_and_where_to_get_it.jpg"
+                        alt="April 2025 Health Tip Flyer" class="image image-bottom">
+                    <img src="website_images/health_tips/nov_24_healthy_choices_and_food_access.jpg"
+                        alt="November 2024 Health Tip Flyer" class="image image-top">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section-container">
+            <div class="left-section">
+                <h2>
+                    Resources
+                </h2>
+                <p>
+                    The resources page serves as a central hub for all the resources, links, and phone numbers we’ve
+                    shared—organized into helpful categories such as food assistance, reproductive health, mental
+                    wellness,
+                    and more.
+                </p>
+                <button>Read More</button>
+            </div>
+
+            <div class="right-section resource-list">
+                <ul>
+                    <li>Direct links to apply for programs like SNAP and WIC.</li>
+                    <li>Information about Planned Parenthood, GoodRx, and local clinics.</li>
+                    <li>Additional trusted resources we recommend.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="section-container" style="background-color: hsl(223, 89%, 95%);">
+            <div class="left-section">
+                <h2>
+                    Monthly Events
+                </h2>
+                <p>
+                    Once a month, we host open discussions on health and wellness topics through Google Meet. Everyone
+                    is welcome to join, and participation can be completely anonymous—cameras and microphones are entirely
+                    optional!
+                </p>
+                <p>
+                    You’re invited to ask questions, share experiences, or simply listen in. We’re here to help you connect with resources, find answers, and be by your side.
+                </p>
+                <button>Read More</button>
+            </div>
+
+            <div class="right-section">
+                <img src="website_images/google_meet_logo.png" alt="Google Meet logo"
+                    style="width: 200px; height: 200px;">
+                <h3 style="margin-bottom: 0; margin-top: 0;">November 15, 2025 8 PM Eastern Time</h3>
+                <p>SNAP benefits are changing. Join our discussion to learn what’s changing, who’s affected,
+                    and where to find support.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        async function loadSharedComponents() {
+            const [navbarRes, footerRes] = await Promise.all([
+                fetch('components/navbar.html'),
+                fetch('components/footer.html')
+            ]);
+            document.getElementById('navbar-placeholder').innerHTML = await navbarRes.text();
+            document.getElementById('footer-placeholder').innerHTML = await footerRes.text();
+        }
+        loadSharedComponents();
+    </script>
+
+</body>
+
+</html>

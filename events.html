@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students For Health</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/resources_about_events.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main style="background-color: hsl(223, 89%, 97%);">
+        <div class="section-container">
+            <div class="left-section">
+                <h1>Monthly Event</h1>
+                <p>
+                    Each month, we host an online chat on Google Meet about a health
+                    and wellness topic. These chats are casual and open to everyone, just
+                    join, listen, and share if you want to. No camera or microphone is
+                    required, and you can join under a nickname if you'd like to.
+                </p>
+                <p>
+                    We created these chats to make it easier for people to ask questions,
+                    learn from other, and talk about things that matter.
+                </p>
+            </div>
+
+            <div class="right-section image-stack">
+                <div class="image-container">
+                    <img src="website_images/november_chat_photo_2.jpg"
+                        class="image image-bottom" style="border-color: var(--primary-color);">
+                    <img src="website_images/november_chat_photo.jpg"
+                        class="image image-top" style="border-color: var(--primary-color);">
+                </div>
+            </div>
+        </div>
+
+        <div class="single-column-container" style="padding-top: 0;">
+            <h2 style="margin-top: 0;">How to Join</h2>
+            <p>
+                <b>1. Email us at studentsforhealthny@gmail.com</b>📤
+                <br>
+                Use the subject line “[Month] Chat” (for example: “November Chat”).
+            </p>
+
+            <p>
+                <b>2. Tell us the nickname you plan to use in your email</b>
+                <br>
+                When you join a Google Meet, you will be asked to enter a display name.
+                This can be a nickname or your initials if you prefer to stay anonymous.
+            </p>
+            <p>
+                <b>3. We'll send you the meeting link</b>
+                <br>
+                You will receive the Google Meet link on the afternoon of the event day.
+            </p>
+
+            <b>Important:</b> Please join the meeting using the
+            <b>same nickname</b> you emailed us.
+            If the name does not match, our host cannot admit you.
+            This helps us keep the space safe and comfortable for everyone.
+        </div>
+        <div class="single-column-container">
+            <h1>Next Event</h1>
+            <p>
+                SNAP benefits are changing. Join us on <b>November 15 at 8 PM Eastern Time</b>
+                for an open chat about what’s new, who might be affected, and how to find support if you need it.
+                Whether you or someone you know currently use SNAP, or just want to understand
+                the updates, you are welcome to join!
+            </p>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        async function loadSharedComponents() {
+            const [navbarRes, footerRes] = await Promise.all([
+                fetch('components/navbar.html'),
+                fetch('components/footer.html')
+            ]);
+            document.getElementById('navbar-placeholder').innerHTML = await navbarRes.text();
+            document.getElementById('footer-placeholder').innerHTML = await footerRes.text();
+        }
+        loadSharedComponents();
+    </script>
+
+</body>
+
+</html>
