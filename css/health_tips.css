@@ -1,0 +1,121 @@
+a.button {
+    display: inline-block;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: medium;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+a.button:hover {
+    background-color: hsla(223, 89%, 58%, 0.855);
+}
+
+/* Table of Contents */
+.toc-section {
+    background-color: hsl(223, 89%, 98%);
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.toc-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 30px;
+    text-align: left;
+}
+
+.toc-columns ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.toc-columns li {
+    margin-bottom: 12px;
+}
+
+.toc-columns a {
+    text-decoration: none;
+    color: var(--button-color);
+    font-weight: 500;
+}
+
+.toc-columns a:hover {
+    color: var(--primary-color);
+}
+
+/* Tips Section */
+.tips-section {
+    padding: 0px;
+}
+
+.tip-item {
+    padding: 25px 50px 25px 50px;
+}
+
+.tip-item:nth-child(even) {
+    background-color: hsl(223, 89%, 98%);
+}
+
+.tip-item:nth-child(odd) {
+    background-color: white;
+}
+
+.tip-item h2 {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.tip-item h4 {
+    color: var(--primary-color);
+}
+
+.tip-item ul {
+    margin-top: 0.5em;
+}
+
+/* Labels & Highlights */
+.bullet-point-header {
+    margin-bottom: 0;
+}
+
+.important-message {
+    background-color: var(--important-msg-background-color);
+    color: var(--primary-color);
+    padding: 5px 8px;
+    font-weight: bold;
+    font-style: italic;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.red-text {
+    color: #7a0000;
+    font-weight: bold;
+}
+
+.green-text {
+    color: #2e6417;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .toc-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .tip-item {
+        padding: 25px;
+    }
+}
