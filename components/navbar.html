@@ -1,0 +1,36 @@
+<nav class="navbar-container">
+    <div class="logo">
+        <a href="index.html">
+            <div class="logo-content">
+                <div class="logo-icon">
+                    <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="60" height="60" rx="15" ry="15" fill="black" />
+                        <rect x="24.375" y="13.125" width="11.25" height="33.75" fill="white" />
+                        <rect x="13.125" y="24.375" width="33.75" height="11.25" fill="white" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span>Students</span>
+                    <span>For</span>
+                    <span>Health</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="links" id="links">
+        <a href="health_tips.html">Health Tips</a>
+        <a href="resources.html">Resources</a>
+        <a href="events.html">Events</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <script>
+        function toggleMenu() {
+            const x = document.getElementById("links");
+            x.style.display = (x.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</nav>
